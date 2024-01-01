@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-// stores everything in sorted order and stores unqiue
-
+// sorted but not unique
 int main()
 {
-    set<int> s;
+    multiset<int> s;
     for (int i = 1; i <= 10; i++)
     {
         s.insert(i);
     }
-
-    cout << "Elements present in the set: ";
+    s.insert(5);
+    cout << "Elements present in the multiset: ";
     for (auto it = s.begin(); it != s.end(); it++)
     {
         cout << *it << " ";
     }
     cout << endl;
-
     int n = 2;
     if (s.find(2) != s.end())
-        cout << n << " is present in set" << endl;
+        cout << n << " is present in multiset" << endl;
 
     s.erase(s.begin());
     cout << "Elements after deleting the first element: ";
@@ -30,15 +28,13 @@ int main()
     }
     cout << endl;
 
-    cout << "The size of the set is: " << s.size() << endl;
+    cout << "The size of the multiset is: " << s.size() << endl;
 
     if (s.empty() == false)
-        cout << "The set is not empty " << endl;
+        cout << "The multiset is not empty " << endl;
     else
-        cout << "The set is empty" << endl;
-
-    cout << s.count(5)<<endl; // if it is there , then output is 1 or it will be 0
+        cout << "The multiset is empty" << endl;
 
     s.clear();
-    cout << "Size of the set after clearing all the elements: " << s.size();
+    cout << "Size of the multiset after clearing all the elements: " << s.size();
 }
